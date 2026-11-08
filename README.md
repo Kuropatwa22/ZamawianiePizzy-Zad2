@@ -1,4 +1,4 @@
-Zadanie 2 — Zamawianie pizzy
+# Zadanie 2 — Zamawianie pizzy
 
 Zrobiłem aplikację do zamawiania pizzy w Android Studio.
 
@@ -8,7 +8,7 @@ Na pierwszym ekranie można wybrać rozmiar pizzy, dodatki, liczbę pizz i wpisa
 
 Na drugim ekranie pokazuje się podsumowanie zamówienia oraz obliczona cena.
 
-Przekazywanie danych
+## Przekazywanie danych
 
 Do przechodzenia na drugi ekran użyłem Intent.
 
@@ -18,13 +18,13 @@ Przekazuję rozmiar, numer rozmiaru, dodatki, ilość i adres.
 
 Użyłem typów String, int i boolean.
 
-Walidacja
+## Walidacja
 
 Przed przejściem na drugi ekran aplikacja sprawdza, czy użytkownik wybrał rozmiar pizzy i wpisał adres.
 
 Jeśli nie, pojawia się komunikat błędu i drugi ekran się nie otwiera.
 
-Potwierdzanie i poprawianie
+## Potwierdzanie i poprawianie
 
 Po kliknięciu Potwierdź drugi ekran zwraca RESULT_OK i numer zamówienia.
 
@@ -34,7 +34,7 @@ Dane w formularzu pozostają wpisane.
 
 Do odbierania wyniku użyłem ActivityResultLauncher.
 
-Udostępnianie
+## Udostępnianie
 
 Dodałem też przycisk Udostępnij.
 
@@ -42,7 +42,7 @@ Można nim wysłać podsumowanie do innej aplikacji.
 
 Użyłem intencji niejawnej ACTION_SEND oraz try/catch.
 
-Czym różni się intencja jawna od niejawnej?
+## Czym różni się intencja jawna od niejawnej?
 
 Intencja jawna otwiera konkretny ekran, który podajemy w kodzie.
 
