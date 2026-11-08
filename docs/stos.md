@@ -81,5 +81,3 @@ Android przechowuje ekrany na stosie.
 Kiedy otwieram nowy ekran, pojawia się on na wierzchu poprzedniego.
 
 Kiedy naciskam Wstecz, wracam do poprzedniego ekranu.
-
-Ekran O aplikacji niczego nie zwraca, bo jest otwierany przez startActivity, a zamykany przez finish.
