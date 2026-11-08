@@ -8,6 +8,7 @@ import java.util.Random;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.ActivityNotFoundException;
 import android.widget.Toast;
+import android.util.Log;
 public class SummaryActivity extends AppCompatActivity {
 
     public static final String EXTRA_SIZE = "pizza.SIZE";
@@ -22,6 +23,7 @@ public class SummaryActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d("STOS", "SummaryActivity onCreate");
         setContentView(R.layout.activity_summary);
 
         tvSummary = findViewById(R.id.tvSummary);
@@ -109,6 +111,18 @@ public class SummaryActivity extends AppCompatActivity {
                     R.string.error_share,
                     Toast.LENGTH_SHORT).show();
         }
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d("STOS", "SummaryActivity onStop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("STOS", "SummaryActivity onDestroy");
     }
 
 

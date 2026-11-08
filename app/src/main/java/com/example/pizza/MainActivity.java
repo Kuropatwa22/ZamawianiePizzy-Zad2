@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
+import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -49,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d("STOS", "MainActivity onCreate");
         setContentView(R.layout.activity_main);
 
         spSize = findViewById(R.id.spSize);
@@ -142,4 +144,17 @@ public class MainActivity extends AppCompatActivity {
 
         pizzaLauncher.launch(intent);
     }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d("STOS", "MainActivity onStop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("STOS", "MainActivity onDestroy");
+    }
+
 }
