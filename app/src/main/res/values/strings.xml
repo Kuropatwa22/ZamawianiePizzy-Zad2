@@ -1,3 +1,40 @@
 <resources>
-    <string name="app_name">Pizza</string>
+    <string name="app_name">Zamawianie pizzy</string>
+    <string name="title_order">Zamawianie pizzy</string>
+    <string name="title_summary">Podsumowanie zamówienia</string>
+
+    <string name="label_size">Wybierz rozmiar pizzy</string>
+    <string name="label_toppings">Dodatki</string>
+    <string name="extra_cheese">Dodatkowy ser (+5 zł)</string>
+    <string name="extra_olives">Oliwki (+4 zł)</string>
+    <string name="label_quantity">Liczba pizz</string>
+    <string name="quantity_format">Ilość: %1$d</string>
+    <string name="hint_address">Adres dostawy</string>
+
+    <string name="btn_next">Dalej</string>
+    <string name="btn_edit">Popraw zamówienie</string>
+    <string name="btn_confirm">Potwierdź</string>
+    <string name="btn_share">Udostępnij</string>
+
+    <string name="summary_format">Rozmiar: %1$s\nDodatki: %2$s\nIlość: %3$d\nAdres: %4$s\nDo zapłaty: %5$d zł</string>
+
+    <string name="none">Brak</string>
+    <string name="cheese">Ser</string>
+    <string name="olives">Oliwki</string>
+    <string name="both_toppings">Ser i oliwki</string>
+
+    <string name="error_size">Wybierz rozmiar pizzy</string>
+    <string name="error_address">Wpisz adres dostawy</string>
+
+    <string name="order_success">Zamówienie potwierdzone, numer %1$s</string>
+    <string name="order_cancel">Wrócono do poprawiania zamówienia</string>
+    <string name="share_via">Udostępnij przez</string>
+    <string name="error_share">Nie znaleziono aplikacji do udostępniania</string>
+
+    <string-array name="pizza_sizes">
+        <item>-- Wybierz rozmiar --</item>
+        <item>Mała</item>
+        <item>Średnia</item>
+        <item>Duża</item>
+    </string-array>
 </resources>
