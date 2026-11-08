@@ -95,6 +95,12 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.btnNext).setOnClickListener(
                 v -> openSummary());
+
+        findViewById(R.id.btnAbout).setOnClickListener(v -> {
+            Intent intent = new Intent(this, AboutActivity.class);
+            startActivity(intent);
+        });
+
     }
 
     private void openSummary() {

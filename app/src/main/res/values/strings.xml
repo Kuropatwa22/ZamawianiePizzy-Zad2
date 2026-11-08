@@ -37,4 +37,10 @@
         <item>Średnia</item>
         <item>Duża</item>
     </string-array>
+
+    <string name="btn_about">O aplikacji</string>
+    <string name="about_title">O aplikacji</string>
+    <string name="about_description">Aplikacja do zamawiania pizzy. Można wybrać rozmiar, dodatki, ilość i adres dostawy.</string>
+    <string name="btn_back">Wstecz</string>
+
 </resources>
