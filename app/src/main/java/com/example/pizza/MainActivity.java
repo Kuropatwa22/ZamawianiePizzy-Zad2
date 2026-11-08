@@ -9,7 +9,9 @@ import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
-
+import android.widget.Toast;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,6 +21,30 @@ public class MainActivity extends AppCompatActivity {
     SeekBar sbQuantity;
     TextView tvQuantity;
     EditText etAddress;
+
+    private final ActivityResultLauncher<Intent> pizzaLauncher =
+            registerForActivityResult(
+                    new ActivityResultContracts.StartActivityForResult(),
+                    result -> {
+
+                        if (result.getResultCode() == RESULT_OK
+                                && result.getData() != null) {
+
+                            String number = result.getData()
+                                    .getStringExtra(
+                                            SummaryActivity.EXTRA_ORDER_NUMBER);
+
+                            Toast.makeText(this,
+                                    getString(R.string.order_success, number),
+                                    Toast.LENGTH_LONG).show();
+
+                        } else {
+
+                            Toast.makeText(this,
+                                    R.string.order_cancel,
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    });
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,6 +134,6 @@ public class MainActivity extends AppCompatActivity {
 
         intent.putExtra(SummaryActivity.EXTRA_ADDRESS, address);
 
-        startActivity(intent);
+        pizzaLauncher.launch(intent);
     }
 }

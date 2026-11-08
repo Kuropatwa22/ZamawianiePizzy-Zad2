@@ -4,7 +4,7 @@ package com.example.pizza;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
-
+import java.util.Random;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SummaryActivity extends AppCompatActivity {
@@ -15,7 +15,7 @@ public class SummaryActivity extends AppCompatActivity {
     public static final String EXTRA_OLIVES = "pizza.OLIVES";
     public static final String EXTRA_QUANTITY = "pizza.QUANTITY";
     public static final String EXTRA_ADDRESS = "pizza.ADDRESS";
-
+    public static final String EXTRA_ORDER_NUMBER = "pizza.ORDER_NUMBER";
     TextView tvSummary;
 
     @Override
@@ -26,7 +26,14 @@ public class SummaryActivity extends AppCompatActivity {
         tvSummary = findViewById(R.id.tvSummary);
         tvSummary.setText(buildSummary());
 
-        findViewById(R.id.btnEdit).setOnClickListener(v -> finish());
+
+        findViewById(R.id.btnEdit).setOnClickListener(v -> {
+            setResult(RESULT_CANCELED);
+            finish();
+        });
+
+        findViewById(R.id.btnConfirm).setOnClickListener(v -> confirm());
+
     }
 
     private String buildSummary() {
@@ -68,4 +75,16 @@ public class SummaryActivity extends AppCompatActivity {
         return getString(R.string.summary_format,
                 size, toppings, quantity, address, total);
     }
+
+    private void confirm() {
+
+        int number = 1000 + new Random().nextInt(9000);
+
+        Intent result = new Intent();
+        result.putExtra(EXTRA_ORDER_NUMBER, "PIZZA/" + number);
+
+        setResult(RESULT_OK, result);
+        finish();
+    }
+
 }
